@@ -8,11 +8,16 @@
     </head>
     <body>
         <div id="vue-app">
-            <h3>Data Binding</h3>
-            <h1><a v-bind:href="website">The secret place</a></h1>
-            <br>
-            <input type="text" v-bind:value="name">
-            <p v-html="websiteTag"></p>
+            <h1>Events</h1>
+            <button v-on:click = "add(1)">Add a year</button>
+            <button v-on:click = "subtract(1)">Subtract a year</button>
+            <button v-on:dblclick = "add(10)">Add a year for doubleclick</button>
+            <button v-on:dblclick = "subtract(10)">Subtract a year for doubleclick</button>
+            <p>My age is {{age}}</p>
+            <div id="canvas">
+              <p v-on:mousemove = "updateXY">{{x}}, {{y}}</p>
+            </div>
+          <p><a v-on:click.prevent = "alertMassege" href="https://github.com/">this link does nothing</a></p>
         </div>
     </body>
 
