@@ -1,16 +1,12 @@
-Vue.component('greeting', {
-    template: '<p>Hey there, I am a re-usable component</p>'
-});
-
-/* new Vue({
-    el: '.test',
-    template: '<p>I am a template</p>'
-}); */
-
 new Vue({
-    el: '#vue-app-one'
-});
-
-new Vue({
-    el: '#vue-app-two'
+  el: '#vue-app-one',
+  data: {
+    output: 'Your favorite food'
+  },
+  methods: {
+    readRefs: function () {
+      console.log(this.$refs.input.value);
+      this.output = this.$refs.input.value;
+    }
+  }
 });
